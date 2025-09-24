@@ -1521,6 +1521,8 @@ MonoBehaviour:
     slots:
     - itemId: 1
       count: 1
+    - itemId: 2
+      count: 1
 --- !u!1 &650290601
 GameObject:
   m_ObjectHideFlags: 3

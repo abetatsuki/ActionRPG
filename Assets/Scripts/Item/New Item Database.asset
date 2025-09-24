@@ -15,16 +15,16 @@ MonoBehaviour:
   items:
   - id: 0
     name: apple
-    description: "\u7518\u3044"
+    description: 
     item: {fileID: 4045774251099535295, guid: 566434cc7bbaf7a44bff2c4bc97a0b7f, type: 3}
-    power: 1
+    power: 0
   - id: 1
-    name: blueHawai
-    description: "\u304F\u3055\u3044"
-    item: {fileID: 139031327558276413, guid: 92003905804c4d84790ce3daa2a725ae, type: 3}
-    power: 2
-  - id: 2
     name: greenapple
-    description: "\u82E6\u3044"
+    description: 
     item: {fileID: 8708691656860361138, guid: 898c9748356fe3f4999c6aa6ccc06077, type: 3}
-    power: 3
+    power: 0
+  - id: 2
+    name: blueHawai
+    description: 
+    item: {fileID: 139031327558276413, guid: 92003905804c4d84790ce3daa2a725ae, type: 3}
+    power: 0
