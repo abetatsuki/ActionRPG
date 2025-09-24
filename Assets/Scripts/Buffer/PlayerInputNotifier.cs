@@ -12,6 +12,7 @@ public class PlayerInputNotifier : MonoBehaviour
     // public event Action OnCamera;
     public event Action OnAttack;
     // public event Action OnThrow;
+    public event Action OnInteract;
 
     private const string MOVE_ACTION = "Move";
     private const string SPRINT_ACTION = "Sprint";
@@ -19,6 +20,7 @@ public class PlayerInputNotifier : MonoBehaviour
     // private const string CAMERA_ACTION = "ToggleView";
     private const string ATTACK_ACTION = "Attack";
     // private const string THROW_ACTION = "Throw";
+    private const string INTERACT_ACTION = "Interact";
 
     private InputAction _moveAction;
     private InputAction _sprintAction;
@@ -26,6 +28,7 @@ public class PlayerInputNotifier : MonoBehaviour
     // private InputAction _cameraAction;
     private InputAction _attackAction;
     // private InputAction _throwAction;
+    private InputAction _interactAction;
 
     private void Awake()
     {
@@ -36,6 +39,7 @@ public class PlayerInputNotifier : MonoBehaviour
         // _cameraAction = playerInput.actions[CAMERA_ACTION];
         _attackAction = playerInput.actions[ATTACK_ACTION];
         // _throwAction = playerInput.actions[THROW_ACTION];
+        _interactAction = playerInput.actions[INTERACT_ACTION];
     }
 
     private void OnEnable()
@@ -50,6 +54,7 @@ public class PlayerInputNotifier : MonoBehaviour
         // _cameraAction.performed += ctx => OnCamera?.Invoke();
         _attackAction.performed += ctx => OnAttack?.Invoke();
         // _throwAction.performed += ctx => OnThrow?.Invoke();
+        _interactAction.performed += ctx => OnInteract?.Invoke();
     }
 
     private void OnDisable()
@@ -64,5 +69,6 @@ public class PlayerInputNotifier : MonoBehaviour
         // _cameraAction.performed -= ctx => OnCamera?.Invoke();
         _attackAction.performed -= ctx => OnAttack?.Invoke();
         // _throwAction.performed -= ctx => OnThrow?.Invoke();
+        _interactAction.performed-= ctx => OnInteract?.Invoke();
     }
 }
