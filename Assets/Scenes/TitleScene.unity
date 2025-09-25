@@ -1024,6 +1024,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Axe_Warrior
       objectReference: {fileID: 0}
+    - target: {fileID: 6655624246481427919, guid: 73fc3488243010c48843c198972d1180, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -2201,7 +2205,7 @@ GameObject:
   - component: {fileID: 1460502829}
   - component: {fileID: 1460502830}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: MainCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3015,8 +3019,10 @@ MonoBehaviour:
   _status: {fileID: 1841230413}
   _rb: {fileID: 1841230412}
   _basespeed: 3
-  _sprintspeed: 3
+  _sprintspeed: 6
+  _animator: {fileID: 1841230415}
   _cameraTransform: {fileID: 1460502828}
+  _currentSpeed: 0
 --- !u!114 &1841230410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3121,6 +3127,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b230dbd6f4ce5948bbd884d6bfa5143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1841230415 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 141435150592187663, guid: 73fc3488243010c48843c198972d1180, type: 3}
+  m_PrefabInstance: {fileID: 481247059}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1841230416 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6275298039375644533, guid: 73fc3488243010c48843c198972d1180, type: 3}
