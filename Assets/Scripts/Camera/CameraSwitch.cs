@@ -27,18 +27,9 @@ public class CameraSwitch : MonoBehaviour
         _notifier.OnCamera -= CameraSwitcher;
     }
 
-    public void CameraSwitcher()
+    public void CameraSwitcher(bool isPressed) //ÉJÉÅÉâÇ™2ë‰Ç»ÇÁÇ±ÇÍÇ≈ÇÊÇµ
     {
-        bool IsMainActive = _maincm.activeSelf;
-        if (IsMainActive== true)
-        {
-            _maincm.SetActive(false);
-            _subcm.SetActive(true);
-        }
-        else
-        {
-            _maincm.SetActive(true);
-            _subcm.SetActive(false);
-        }
+      _maincm.SetActive(!isPressed);
+      _subcm?.SetActive(isPressed);
     }
 }

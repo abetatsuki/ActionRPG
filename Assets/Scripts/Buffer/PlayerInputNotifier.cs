@@ -9,7 +9,7 @@ public class PlayerInputNotifier : MonoBehaviour
     public event Action<Vector2> OnMove;
     public event Action<bool> OnSprint;
     // public event Action OnCarry;
-    public event Action OnCamera;
+    public event Action<bool> OnCamera;
     public event Action OnAttack;
     // public event Action OnThrow;
     public event Action OnInteract;
@@ -51,7 +51,8 @@ public class PlayerInputNotifier : MonoBehaviour
         _sprintAction.canceled += ctx => OnSprint?.Invoke(false);
 
         // _carryAction.performed += ctx => OnCarry?.Invoke();
-        _cameraAction.performed += ctx => OnCamera?.Invoke();
+        _cameraAction.performed += ctx => OnCamera?.Invoke(true);
+        _cameraAction.canceled += ctx => OnCamera?.Invoke(false);
         _attackAction.performed += ctx => OnAttack?.Invoke();
         // _throwAction.performed += ctx => OnThrow?.Invoke();
         _interactAction.performed += ctx => OnInteract?.Invoke();
@@ -66,7 +67,8 @@ public class PlayerInputNotifier : MonoBehaviour
         _sprintAction.canceled -= ctx => OnSprint?.Invoke(false);
 
         // _carryAction.performed -= ctx => OnCarry?.Invoke();
-        _cameraAction.performed -= ctx => OnCamera?.Invoke();
+        _cameraAction.performed -= ctx => OnCamera?.Invoke(true);
+        _cameraAction.canceled -= ctx => OnCamera?.Invoke(false);
         _attackAction.performed -= ctx => OnAttack?.Invoke();
         // _throwAction.performed -= ctx => OnThrow?.Invoke();
         _interactAction.performed-= ctx => OnInteract?.Invoke();
