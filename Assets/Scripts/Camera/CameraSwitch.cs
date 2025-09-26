@@ -29,6 +29,7 @@ public class CameraSwitch : MonoBehaviour
 
     public void CameraSwitcher(bool isPressed) //ƒJƒƒ‰‚ª2‘ä‚È‚ç‚±‚ê‚Å‚æ‚µ
     {
+        Debug.Log("CAMERAON");
       _maincm.SetActive(!isPressed);
       _subcm?.SetActive(isPressed);
     }
