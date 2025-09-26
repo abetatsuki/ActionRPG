@@ -63,11 +63,14 @@ public class MoveHandler : MonoBehaviour
         Vector3 velocity = moveDir * _currentSpeed;
         _rb.linearVelocity = new Vector3(velocity.x, _rb.linearVelocity.y, velocity.z);
 
+        Vector3 localMove = transform.InverseTransformDirection(moveDir) * (_currentSpeed / _sprintspeed);
 
-  
-        float normalizedSpeed = _currentSpeed / _sprintspeed; // 最大速度で割る
+        float posX = localMove.x; // 左右
+        float posY = localMove.z; // 前後（Zを使う）
 
-        _animator.SetFloat("Speed", normalizedSpeed);
+        _animator.SetFloat("PosX", posX);
+        _animator.SetFloat("PosY", posY);
+
 
     }
 }
