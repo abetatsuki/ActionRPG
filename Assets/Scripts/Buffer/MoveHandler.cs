@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MoveHandler : MonoBehaviour
 {
@@ -70,6 +71,9 @@ public class MoveHandler : MonoBehaviour
 
         _animator.SetFloat("PosX", posX);
         _animator.SetFloat("PosY", posY);
+
+        float normalizedSpeed = _isSprinting ? 1f : (input.magnitude > 0 ? 0.5f : 0f);
+        _animator.SetFloat("Speed", normalizedSpeed);
 
 
     }
