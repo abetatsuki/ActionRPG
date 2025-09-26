@@ -15,10 +15,12 @@ public class MoveHandler : MonoBehaviour
 
     private bool _isSprinting = false;
 
-
+   /// <summary>
+   /// イベントが通知されたら処理される
+   /// </summary>
     private void OnEnable()
     {
-        _notifier.OnMove += _status.SetMoveInput;
+        _notifier.OnMove += _status.SetMoveInput;  
         _notifier.OnSprint += SetSprint;
     }
 
@@ -40,20 +42,22 @@ public class MoveHandler : MonoBehaviour
 
     private void MovePlayer()
     {
-        Vector2 input = _status.MoveInput;
+        Vector2 input = _status.MoveInput; //入力結果を受け取る
 
-        Vector3 forward = _cameraTransform.forward;
+        Vector3 forward = _cameraTransform.forward; //カメラの前と右をとる
         Vector3 right = _cameraTransform.right;
-        forward.y = 0f;
+        forward.y = 0f; //水平に保つため
         right.y = 0f;
-        forward.Normalize();
+        forward.Normalize();//方向だけもらう
         right.Normalize();
 
+        //斜め入力の時に早くならないように forwardがVector3なのでこの書き方ができる
+        //カメラの前方向に対して入力があるので前と後ろを受け取れる
         Vector3 moveDir = (forward * input.y + right * input.x).normalized;
 
-        if (input.magnitude > 0)
+        if (input.magnitude > 0) //動いてないときに走りだす挙動をセーブ
         {
-            _currentSpeed = _isSprinting ? _sprintspeed : _basespeed;
+            _currentSpeed = _isSprinting ? _sprintspeed : _basespeed;//走るの判定
         }
         else
         {
@@ -61,8 +65,8 @@ public class MoveHandler : MonoBehaviour
         }
 
 
-        Vector3 velocity = moveDir * _currentSpeed;
-        _rb.linearVelocity = new Vector3(velocity.x, _rb.linearVelocity.y, velocity.z);
+        Vector3 velocity = moveDir * _currentSpeed; //スピードをつける
+        _rb.linearVelocity = new Vector3(velocity.x, _rb.linearVelocity.y, velocity.z);//移動を実行
 
         Vector3 localMove = transform.InverseTransformDirection(moveDir) * (_currentSpeed / _sprintspeed);
 
