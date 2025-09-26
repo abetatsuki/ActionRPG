@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MoveHandler : MonoBehaviour
 {
@@ -64,6 +64,10 @@ public class MoveHandler : MonoBehaviour
         _rb.linearVelocity = new Vector3(velocity.x, _rb.linearVelocity.y, velocity.z);
 
 
-        _animator.SetFloat("Speed", _currentSpeed);
+  
+        float normalizedSpeed = _currentSpeed / _sprintspeed; // 最大速度で割る
+
+        _animator.SetFloat("Speed", normalizedSpeed);
+
     }
 }

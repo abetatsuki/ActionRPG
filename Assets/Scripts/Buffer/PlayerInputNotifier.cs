@@ -13,6 +13,7 @@ public class PlayerInputNotifier : MonoBehaviour
     public event Action OnAttack;
     // public event Action OnThrow;
     public event Action OnInteract;
+    public event Action<Vector2> OnLook;
 
     private const string MOVE_ACTION = "Move";
     private const string SPRINT_ACTION = "Sprint";
@@ -21,6 +22,7 @@ public class PlayerInputNotifier : MonoBehaviour
     private const string ATTACK_ACTION = "Attack";
     // private const string THROW_ACTION = "Throw";
     private const string INTERACT_ACTION = "Interact";
+    private const string LOOK_ACTION = "Look";
 
     private InputAction _moveAction;
     private InputAction _sprintAction;
@@ -29,6 +31,7 @@ public class PlayerInputNotifier : MonoBehaviour
     private InputAction _attackAction;
     // private InputAction _throwAction;
     private InputAction _interactAction;
+    private InputAction _lookAction;
 
     private void Awake()
     {
@@ -40,6 +43,7 @@ public class PlayerInputNotifier : MonoBehaviour
         _attackAction = playerInput.actions[ATTACK_ACTION];
         // _throwAction = playerInput.actions[THROW_ACTION];
         _interactAction = playerInput.actions[INTERACT_ACTION];
+        _lookAction = playerInput.actions[LOOK_ACTION];
     }
 
     private void OnEnable()
@@ -56,6 +60,7 @@ public class PlayerInputNotifier : MonoBehaviour
         _attackAction.performed += ctx => OnAttack?.Invoke();
         // _throwAction.performed += ctx => OnThrow?.Invoke();
         _interactAction.performed += ctx => OnInteract?.Invoke();
+        _lookAction.performed += ctx => OnLook?.Invoke(ctx.ReadValue<Vector2>());
     }
 
     private void OnDisable()
@@ -72,5 +77,6 @@ public class PlayerInputNotifier : MonoBehaviour
         _attackAction.performed -= ctx => OnAttack?.Invoke();
         // _throwAction.performed -= ctx => OnThrow?.Invoke();
         _interactAction.performed-= ctx => OnInteract?.Invoke();
+        _lookAction.performed -= ctx => OnLook?.Invoke(ctx.ReadValue<Vector2>());
     }
 }
