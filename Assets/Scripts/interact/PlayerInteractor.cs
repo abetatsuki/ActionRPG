@@ -21,7 +21,7 @@ public class PlayerInteractor : MonoBehaviour
 
     private void TryInteract()
     {
-        Debug.Log("Yes"); // 確認用
+       // Debug.Log("Yes"); // 確認用
 
         // Ray の可視化（Sceneビューで赤い線として表示される）
         Debug.DrawRay(_camera.transform.position, _camera.transform.forward * _rayDistance, Color.green, 1f);

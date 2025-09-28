@@ -5,20 +5,22 @@ using UnityEngine;
 public class PlayerAttacker : MonoBehaviour
 {
     [SerializeField] private PlayerInputNotifier _notifier;
+    [SerializeField]private PickUpItem PickUpItem;
     private IAttackable attackable;
+    [SerializeField]GameObject attackableGameObject;
     private void OnEnable()
     {
-        _notifier.OnInteract += TryAttack;
+        _notifier.OnAttack += TryAttack;
     }
 
     private void OnDisable()
     {
-        _notifier.OnInteract -= TryAttack;
+        _notifier.OnAttack -= TryAttack;
     }
 
     private void TryAttack()
     {
-        attackable = GetComponent<IAttackable>();
-        attackable.Attack();
+        PickUpItem.PickUpWeaPon(attackableGameObject);
+        PickUpItem.Attack();
     }
 }
