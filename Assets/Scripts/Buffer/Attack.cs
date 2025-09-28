@@ -20,7 +20,7 @@ public class PlayerAttacker : MonoBehaviour
 
     private void TryAttack()
     {
-        PickUpItem.PickUpWeaPon(attackableGameObject);
+        PickUpItem.PickUpWeapon(attackableGameObject);
         PickUpItem.Attack();
     }
 }
