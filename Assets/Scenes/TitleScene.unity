@@ -325,6 +325,7 @@ GameObject:
   - component: {fileID: 232901986}
   - component: {fileID: 232901985}
   - component: {fileID: 232901984}
+  - component: {fileID: 232901987}
   m_Layer: 0
   m_Name: SubCamera
   m_TagString: Untagged
@@ -341,7 +342,7 @@ Transform:
   m_GameObject: {fileID: 232901982}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.9848078, z: -0.17364816, w: 0}
-  m_LocalPosition: {x: 0, y: 1.85, z: 2}
+  m_LocalPosition: {x: 0, y: 1.85, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -450,6 +451,27 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &232901987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232901982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e25475ea3bb644f43bd5700792569cbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _notifier: {fileID: 1667878356}
+  _player: {fileID: 1667878362}
+  rotationSpeed: 0.1
+  followSpeed: 5
+  verticalLimit: 80
+  cameraHeight: 2
+  offset: {x: 0, y: 1.5, z: 3}
+  playerBody: {fileID: 1667878362}
+  pitch: -7
 --- !u!4 &324404709 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2696952055860048096, guid: 73fc3488243010c48843c198972d1180, type: 3}
@@ -544,8 +566,10 @@ MonoBehaviour:
   rotationSpeed: 0.1
   followSpeed: 5
   verticalLimit: 80
-  cameraHeight: 1
+  cameraHeight: 2
+  offset: {x: 0, y: 1, z: -3}
   playerBody: {fileID: 1667878362}
+  pitch: 40
 --- !u!114 &351673142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -640,13 +664,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 351673139}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.85, z: -2}
+  m_LocalRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
+  m_LocalPosition: {x: 0, y: 1.85, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1667878362}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 20, y: 0, z: 0}
 --- !u!1 &417539599
 GameObject:
   m_ObjectHideFlags: 0
@@ -2258,7 +2282,9 @@ MonoBehaviour:
   followSpeed: 5
   verticalLimit: 80
   cameraHeight: 1
+  offset: {x: 0, y: 0, z: 0}
   playerBody: {fileID: 1841230416}
+  pitch: 30
 --- !u!1 &1475555429
 GameObject:
   m_ObjectHideFlags: 0
@@ -2686,6 +2712,19 @@ MonoBehaviour:
   - m_Rig: {fileID: 1370443819}
     m_Active: 1
   m_Effectors: []
+--- !u!114 &1667878364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667878353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07caa0cac07c2f24d857d6441bc840b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _notifier: {fileID: 1667878356}
 --- !u!1 &1670662568
 GameObject:
   m_ObjectHideFlags: 0
@@ -3304,6 +3343,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6655624246481427919, guid: 73fc3488243010c48843c198972d1180, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1667878363}
+    - targetCorrespondingSourceObject: {fileID: 6655624246481427919, guid: 73fc3488243010c48843c198972d1180, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1667878364}
   m_SourcePrefab: {fileID: 100100000, guid: 73fc3488243010c48843c198972d1180, type: 3}
 --- !u!1 &1942737494 stripped
 GameObject:
@@ -3373,6 +3415,7 @@ GameObject:
   - component: {fileID: 2014833407}
   - component: {fileID: 2014833406}
   - component: {fileID: 2014833405}
+  - component: {fileID: 2014833409}
   m_Layer: 0
   m_Name: SubCamera
   m_TagString: Untagged
@@ -3498,6 +3541,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1841230416}
   m_LocalEulerAnglesHint: {x: 20, y: 180, z: 0}
+--- !u!114 &2014833409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014833404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e25475ea3bb644f43bd5700792569cbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _notifier: {fileID: 0}
+  _player: {fileID: 0}
+  rotationSpeed: 0.1
+  followSpeed: 5
+  verticalLimit: 80
+  cameraHeight: 2
+  offset: {x: 0, y: 0, z: 0}
+  playerBody: {fileID: 0}
+  pitch: 30
 --- !u!1 &2020651450
 GameObject:
   m_ObjectHideFlags: 0
