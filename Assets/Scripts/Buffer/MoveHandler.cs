@@ -58,10 +58,12 @@ public class MoveHandler : MonoBehaviour
         if (input.magnitude > 0) //動いてないときに走りだす挙動をセーブ
         {
             _currentSpeed = _isSprinting ? _sprintspeed : _basespeed;//走るの判定
+            _animator.SetBool("BoolTest",_isSprinting);
         }
         else
         {
             _currentSpeed = 0f;
+            _animator.SetBool("BoolTest", false);
         }
 
 

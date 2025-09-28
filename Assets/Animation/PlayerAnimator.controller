@@ -279,8 +279,8 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 3
-    m_ConditionEvent: Speed
+  - m_ConditionMode: 1
+    m_ConditionEvent: BoolTest
     m_EventTreshold: 0.5
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4394426230445725643}
@@ -331,8 +331,8 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 4
-    m_ConditionEvent: Speed
+  - m_ConditionMode: 2
+    m_ConditionEvent: BoolTest
     m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7505205289368420120}
@@ -470,7 +470,7 @@ AnimatorStateMachine:
     m_Position: {x: -270, y: 200, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8117538970344110658}
-    m_Position: {x: -110, y: 280, z: 0}
+    m_Position: {x: -120, y: 270, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
