@@ -21,21 +21,26 @@ public class PlayerInteractor : MonoBehaviour
 
     private void TryInteract()
     {
-       // Debug.Log("Yes"); // 確認用
+        Debug.Log("Yes"); // 確認用
 
         // Ray の可視化（Sceneビューで赤い線として表示される）
         Debug.DrawRay(_camera.transform.position, _camera.transform.forward * _rayDistance, Color.green, 1f);
 
+        
+    
         Ray ray = new Ray(_camera.transform.position, _camera.transform.forward);
 
         if (Physics.Raycast(ray, out RaycastHit hit, _rayDistance, _interactableLayer))
         {
-            IInteractable interactable = hit.collider.GetComponent<IInteractable>();
-            if (interactable != null)
+           IInteractable test = hit.collider.GetComponent<IInteractable>();
+            if (test != null)
             {
-                interactable.Interact();
+                // この PlayerInteractor がアタッチされているプレイヤー本体を渡す
+               test.Interact(this.gameObject); // this.gameObject がプレイヤーなら OK
             }
         }
     }
 
 }
+
+

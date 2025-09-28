@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class SwordAttack : MonoBehaviour,IAttackable
-
+public class SwordAttack : ItemBase, IAttackable
 {
-     [SerializeField] private Animator _animator;
-  public  void Attack()
+    [SerializeField] private Animator _animator;
+
+    public void Attack()
     {
         Debug.Log("yes");
         _animator.SetTrigger("Attack1");

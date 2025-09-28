@@ -7,5 +7,5 @@ public class IInteractor : MonoBehaviour
 
 public interface IInteractable
 {
-    void Interact();
+    void Interact(GameObject ubteractor);
 }
