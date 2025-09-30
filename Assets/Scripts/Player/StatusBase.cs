@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class StatusBase : MonoBehaviour
 {
-    public string name;
+    public string characterName;
     public int hp;
     public int Maxhp;
     public int power;
@@ -26,9 +26,11 @@ public class StatusBase : MonoBehaviour
         }
     }
 
+    
+
     protected virtual void Die()
     {
-        Debug.Log($"{name}‚Í“|‚ê‚½");
+        Debug.Log($"{characterName}‚Í“|‚ê‚½");
     }
 
 }
