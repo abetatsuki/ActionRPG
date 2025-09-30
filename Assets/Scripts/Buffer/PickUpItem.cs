@@ -47,6 +47,7 @@ public class PickUpItem : MonoBehaviour
 
         currentWeapon = weapon;
         currentWeapon.SetActive(true); // ‘•”õ’†‚Í•\¦
+        
 
         // GripPoint ‚É‡‚í‚¹‚ÄˆÊ’uE‰ñ“]‚ğ’²®
         Transform grip = weapon.transform.Find("GripPoint");
