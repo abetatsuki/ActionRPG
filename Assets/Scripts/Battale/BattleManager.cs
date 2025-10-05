@@ -49,7 +49,7 @@ public class BattleManager : MonoBehaviour
         Destroy(_currentenemy.gameObject);
         _currentenemy = null;
 
-        Invoke(nameof(StartBattle), 2f);
+        //Invoke(nameof(StartBattle), 2f);
     }
 
 }
