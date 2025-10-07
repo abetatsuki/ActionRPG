@@ -69,8 +69,10 @@ public class MoveHandler : MonoBehaviour
 
         Vector3 velocity = moveDir * _currentSpeed; //スピードをつける
         _rb.linearVelocity = new Vector3(velocity.x, _rb.linearVelocity.y, velocity.z);//移動を実行
+       
 
         Vector3 localMove = transform.InverseTransformDirection(moveDir) * (_currentSpeed / _sprintspeed);
+       
 
         float posX = localMove.x; // 左右
         float posY = localMove.z; // 前後（Zを使う）

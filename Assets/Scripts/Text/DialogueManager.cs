@@ -19,4 +19,5 @@ public class HeadMarkController : MonoBehaviour
     {
         headMark.gameObject.SetActive(false);
     }
+
 }
