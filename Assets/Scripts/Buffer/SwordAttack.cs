@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SwordAttack : ItemBase, IAttackable
+public class SwordAttack : Item, IAttackable
 {
     [SerializeField] private Animator _animator;
 

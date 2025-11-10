@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class ItemBase : MonoBehaviour, IPickupable, IInteractable
+public abstract class Item : MonoBehaviour, IPickupable, IInteractable
 {
     [SerializeField] protected string itemName;   // 子クラスで設定
     [SerializeField] protected Sprite icon;       // 子クラスで設定

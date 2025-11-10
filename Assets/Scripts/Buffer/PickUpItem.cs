@@ -13,7 +13,7 @@ public class PickUpItem : MonoBehaviour
     /// </summary>
     public void PickUp(GameObject itemObj)
     {
-        var itemBase = itemObj.GetComponent<ItemBase>();
+        var itemBase = itemObj.GetComponent<Item>();
         if (itemBase == null)
         {
             Debug.Log($"{itemObj.name} ВЌПEВ¶В№ВєВс");

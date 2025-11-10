@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : StatusBase
@@ -7,4 +8,9 @@ public class Player : StatusBase
     {
         Debug.Log("プレイヤー死亡 => ゲームオーバー");
     }
+    public void ShopCheck(int price)
+    {
+        this.money -= price;
+    }
+
 }

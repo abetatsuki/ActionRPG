@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ItemTest :ItemBase
+public class ItemTest :Item
 {
 
 }

@@ -3,17 +3,17 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    private List<ItemBase> items = new List<ItemBase>();
+    private List<Item> items = new List<Item>();
 
-    public void AddItem(ItemBase item)
+    public void AddItem(Item item)
     {
         items.Add(item);
         Debug.Log($"{item.GetItemName()} ‚ðƒCƒ“ƒxƒ“ƒgƒŠ‚É’Ç‰Á‚µ‚Ü‚µ‚½");
     }
 
-    public List<ItemBase> GetItems() => items;
+    public List<Item> GetItems() => items;
 
-    public void RemoveItem(ItemBase item)
+    public void RemoveItem(Item item)
     {
         if (items.Contains(item))
         {

@@ -6,6 +6,7 @@ public class StatusBase : MonoBehaviour
     public int hp;
     public int Maxhp;
     public int power;
+    public int money;
 
 
     public void  TakeDamage(int damage)
