@@ -3,8 +3,9 @@ using UnityEngine.UI;
 
 public class SpriteChange : MonoBehaviour
 {
+    /// <summary>変更した後のSpite </summary>
     [SerializeField] private Sprite _sprite;
-    [SerializeField] private Sprite _sprite2;
+    private Sprite _sprite2;
     private Image _image;
 
     private void Start()
@@ -12,17 +13,11 @@ public class SpriteChange : MonoBehaviour
        _image = GetComponent<Image>();
         _sprite2 = _image.sprite;
     }
-
-    public void ChangeSprite()
+    ///<summary>スプライトを変更する</summary>
+    public void ChangeSprite(Sprite sprite)
     {
-        if (_image.sprite == _sprite)
-        {
-            _image.sprite = _sprite2;
-        }
-        else
-        {
-            _image.sprite = _sprite;
-        }
+        if (_image.sprite == sprite) return;
+        else _image.sprite = sprite;
     }
 
 }
